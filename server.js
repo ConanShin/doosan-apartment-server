@@ -1,12 +1,14 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 const axios = require('axios')
+
+app.use(cors())
+let response = []
 
 const doosanOnly = items => {
     return items.filter(item => item["아파트"] === '두산')
 }
-
-let response = []
 
 app.get('/', async (req, res) => {
     const ServiceKey = 'alJI2tyVWfvJgufBQ1Q2DGYe5QUPWcPJ11x6W9hTWil3uLnIsK2ABRLn6FFnIZt5EzJI2lage2Aaa7ub9vLoWA%3D%3D'
