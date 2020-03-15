@@ -11,6 +11,7 @@ const doosanOnly = items => {
 }
 
 app.get('/', async (req, res) => {
+    console.log('somebody ask for data', req)
     const ServiceKey = 'alJI2tyVWfvJgufBQ1Q2DGYe5QUPWcPJ11x6W9hTWil3uLnIsK2ABRLn6FFnIZt5EzJI2lage2Aaa7ub9vLoWA%3D%3D'
     const LAWD_CD = '11200'
     let THIS_MONTH = new Date()
@@ -35,5 +36,5 @@ app.get('/', async (req, res) => {
 })
 
 const server = app.listen(5001, () => {
-    console.log("Express server has started on port 5001")
+    console.log(new Date().toISOString() + " Express server has started on port 5001")
 })
