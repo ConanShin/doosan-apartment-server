@@ -11,7 +11,8 @@ const doosanOnly = items => {
 }
 
 app.get('/', async (req, res) => {
-    console.log('somebody ask for data', req)
+    const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress
+    console.log('somebody ask for data: ', ip)
     const ServiceKey = 'alJI2tyVWfvJgufBQ1Q2DGYe5QUPWcPJ11x6W9hTWil3uLnIsK2ABRLn6FFnIZt5EzJI2lage2Aaa7ub9vLoWA%3D%3D'
     const LAWD_CD = '11200'
     let THIS_MONTH = new Date()
